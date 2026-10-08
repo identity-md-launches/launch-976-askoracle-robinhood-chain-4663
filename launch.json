@@ -15,5 +15,5 @@
       ]
     }
   ],
-  "notes": "Robinhood Chain 4663. One application; no token deployment. Explicit owner is resolved by the launch service. Intake priceOf is authoritative (brief: 0.5 IMD); each fee is forwarded immediately, with no refund. See README.md for configuration, callback trust and timeout semantics."
+  "notes": "Deploy AskOracle on Robinhood Chain (4663). Constructor arguments, in order: owner ($owner), Intake, existing IMD, bytes32(\"oracle.request@oracle-1\"), oracle signer, panel size 50, quorum 40, validity 86400 seconds. The owner may update Intake, IMD, action, signer and panel settings. Anyone may ask a 1-500 byte question after approving AskOracle to spend IMD. Each request pays the current Intake.priceOf(action, IMD) fee (brief: 0.5 IMD), forwarded to Intake with no retained request funds or refund. The recorded Intake delivers signed bool attestations verified in AskOracle's EIP-712 domain with panel agreement and replay protection. Answers are exposed through question(id), count() and latestAnswered(). Anyone may mark a pending request Unanswered after 24 hours. Deploy only this application; no token deployment, ETH funding or initialization calls."
 }
