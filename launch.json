@@ -1,0 +1,19 @@
+{
+  "kind": "evm_contracts",
+  "contracts": [
+    {
+      "contract": "AskOracle",
+      "constructorArgs": [
+        "$owner",
+        "0x1397434cd35e8a9c8ac312a61d3a285eb31dea56",
+        "0x5f7bb59365ce557c26dbcaa4ee9d39a4b95b7127",
+        "0x6f7261636c652e72657175657374406f7261636c652d31000000000000000000",
+        "0x5598aa9146215bc13eb26f2c692ad1461fd32982",
+        "50",
+        "40",
+        "86400"
+      ]
+    }
+  ],
+  "notes": "Robinhood Chain 4663. One application; no token deployment. Explicit owner is resolved by the launch service. Intake priceOf is authoritative (brief: 0.5 IMD); each fee is forwarded immediately, with no refund. See README.md for configuration, callback trust and timeout semantics."
+}
